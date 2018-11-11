@@ -1,0 +1,27 @@
+<div class="mb-3">
+	<% if params[:tag] %>
+		検索中のタグ
+		<%= link_to(params[:tag], "/?tag=#{params[:tag]}", class:"badge badge-info")  %>
+	<% end %>
+</div>
+<div class="row no-gutter">
+    <% @trips.each do |trip| %>
+        <div class="card col-sm-3 box-shadow">
+			<%= image_tag trip.photo, class:"card-img-top", height:'250px'  %>
+            <div class="card-body">
+				<p class="card-text"><%= trip.title %></p>
+				<% trip.tag_list.each do |tag| %>
+					<%= link_to(tag, "/?tag=#{tag}", class:"badge badge-pill badge-info")  %>
+				<% end %>
+				<div class="d-flex justify-content-between align-items-center">
+					<small class="text-muted"><%= trip.user.nickname %></small>
+					<small class="text-muted"><%= trip.created_at.strftime("%Y/%m/%d") %></small>
+				</div>
+			</div>
+        </div>
+    <% end %>
+</div>
+    
+
+
+		
