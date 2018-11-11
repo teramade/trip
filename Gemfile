@@ -10,7 +10,7 @@ gem 'rails', '~> 5.2.1'
 # gem 'sqlite3'
 #localとtest環境ではsqlliteを使う
 group :development, :test do
- gem ‘sqlite3’
+ gem 'sqlite3'
 end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
